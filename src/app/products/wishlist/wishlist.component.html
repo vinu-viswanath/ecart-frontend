@@ -1,0 +1,45 @@
+<!-- Wishlist Empty  --> 
+<div class="container" *ngIf="allwishlistItem.length==0">
+    <div class="row">
+        <div class="col-6">
+            <img src="" alt="">
+            <h3>You haven't followed anything</h3>
+            <h3>Wishlist Now</h3>
+        </div>
+        <div class="col-6">
+            <button>hello</button>
+        </div>
+    </div>
+</div>
+
+<!-- Wishlist with content  -->
+<!-- Section  -->
+<section class="py-5" *ngIf="allwishlistItem.length!==0">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5" *ngFor="let wish of allwishlistItem">
+                <div class="card h-100" >
+                    <!-- Product image-->
+                    <img class="card-img-top" style="width: 100%; height: 200px; margin: 20px;" [src]="wish.image" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{wish.title}}</h5>
+                            <!-- Product price-->
+                            $ 100.00{{wish.price}}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <button class="btn" (click)="deleteWishlist(wish.id)"><i class="fa-solid fa-heart" style="color: #e31635;"></i>
+                        Remove Wishlist</button>
+                    <button class="btn" (click)="addToCart(wish)"><i class="fa-solid fa-cart-shopping fa-bounce"></i>Add To cart</button>
+
+                    <!-- <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View products</a></div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>

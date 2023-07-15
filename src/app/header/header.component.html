@@ -1,0 +1,38 @@
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light text-white bg-black">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand text-white" routerLink=""><i class="fa-solid fa-cart-shopping fa-bounce"></i>E-Kart</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <div class="col-4">
+                 <!-- search  -->
+                 <input (keyup)="search($event)" type="text" placeholder="Search your product" class="form-control">
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4"><form class="d-flex">
+               
+                <!-- Wishlist button  -->
+                <button class="btn btn-outline-light" type="submit" routerLink="products/wishlist">
+                    <i class="fa-solid fa-heart" style="color: #e31635;"></i>
+                    Wishlist
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                </button>
+                <!-- cart button  -->
+                <button class="btn btn-outline-light" type="submit" routerLink="products/cart">
+                    <i class="fa-solid fa-cart-shopping" style="color: #2bee38;"></i>
+                    Cart
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">{{cartItemsCount}}</span>
+                </button>
+            </form>
+        </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <h1 class="text-center bg-black text-light mt-3">Our Newly Launched Products</h1>
+</div>
